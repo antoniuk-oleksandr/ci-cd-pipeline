@@ -38,4 +38,8 @@ jobs:
 
     - name: Logout from Docker Hub
       run: docker logout
+    
+    - name: Trigger Render Deploy Hook
+      run: |
+        curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK }}
 
